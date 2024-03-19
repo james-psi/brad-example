@@ -1,0 +1,105 @@
+{
+  "id": "b6915be8-beb7-4c94-89f1-85dd6270dbf5",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "version": "5",
+  "dialect": "pg",
+  "tables": {
+    "shadcn_tasks": {
+      "name": "shadcn_tasks",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "varchar(128)",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "title": {
+          "name": "title",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "status": {
+          "name": "status",
+          "type": "shadcn_status",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'active'"
+        },
+        "category": {
+          "name": "category",
+          "type": "shadcn_category",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'criminal_case'"
+        },
+        "assigned_to": {
+          "name": "assigned_to",
+          "type": "shadcn_assigned_to",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'division 1'"
+        },
+        "last_action_taken": {
+          "name": "last_action_taken",
+          "type": "shadcn_last_action_taken",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'filed motion'"
+        },
+        "last_action_date": {
+          "name": "last_action_date",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'2024-03-19 15:18:05.159'"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {
+    "shadcn_assigned_to": {
+      "name": "shadcn_assigned_to",
+      "values": {
+        "division 1": "division 1",
+        "division 2": "division 2",
+        "division 3": "division 3"
+      }
+    },
+    "shadcn_category": {
+      "name": "shadcn_category",
+      "values": {
+        "criminal_case": "criminal_case",
+        "civil_case": "civil_case",
+        "family_case": "family_case",
+        "administrative_case": "administrative_case"
+      }
+    },
+    "shadcn_last_action_taken": {
+      "name": "shadcn_last_action_taken",
+      "values": {
+        "filed motion": "filed motion",
+        "received motion": "received motion",
+        "case closed": "case closed"
+      }
+    },
+    "shadcn_status": {
+      "name": "shadcn_status",
+      "values": {
+        "active": "active",
+        "inactive": "inactive"
+      }
+    }
+  },
+  "schemas": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}
